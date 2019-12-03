@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如何快速的使用Vue</title>
+    <!--引入Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="main">
+       <!-- <div>
+            <h1>{{message}}</h1>
+            <input v-model="message">
+        </div>-->
+    </div>
+
+<script>
+    new Vue({
+        el:'#main',
+        data:{
+            message:'测试'
+        },
+        template:``,
+        computed:{
+        },
+        methods:{
+        },
+        render (h) {
+            let _this = this;
+            return h('div',[h('h1',this.message),h('input',{
+                domProps:{
+                    value:_this.message
+                },
+                on:{
+                    input:function (event) {
+                        _this.message = event.target.value;
+                    }
+                }
+            })]);
+        },
+        //生命周期钩子
+        beforeCreate(){
+
+        },
+        created(){
+
+        },
+        beforeMount(){
+
+        },
+        mounted(){
+
+        },
+        beforeUpdate(){
+
+        },
+        updated(){
+
+        },
+        beforeDestroy(){
+
+        },
+        destroyed(){
+
+        }
+    })
+</script>
+</body>
+</html>

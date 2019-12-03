@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在模块系统中进行局部注册</title>
+    <style>
+        #main{
+            margin-left: 800px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="main">
+        <h1>{{title}}</h1>
+        <my-list></my-list>
+    </div>
+<script type="module">
+    import myList from './component/myList.js'
+    new Vue({
+        el:'#main',
+        data:{
+            title:'My Todo App!'
+        },
+        components:{
+            myList
+        }
+    })
+</script>
+</body>
+</html>
