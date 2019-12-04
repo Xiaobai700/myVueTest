@@ -7,11 +7,10 @@
         name: "App",
         data(){
             return{
-                message:'hello world!'
+                message:'测试!'
             }
         },
         methods:{
-
         },
         created() {
         },

@@ -70,7 +70,8 @@
     let myList = {
         name:'myList',
         components: {
-            myText,myItem
+            'my-text':myText,
+            'my-item':myItem
         },
         data () {
             return {
@@ -236,12 +237,10 @@
     new Vue({
         el:'#main',
         data:{
-            title1:'全局注册!',
-            title2:'局部注册!'
         },
         components:{
             //局部注册时
-            myList
+            'my-list':myList
         }
     })
 </script>
