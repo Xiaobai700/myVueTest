@@ -48,7 +48,7 @@ module.exports = {
         new webpack.NamedModulesPlugin(),//方便查看要修补的依赖
         new webpack.HotModuleReplacementPlugin()
     ],
-    devtool : false,//追踪错误和警告,将编译后的代码映射回原始源代码
+    devtool : 'inline-source-map',//追踪错误和警告,将编译后的代码映射回原始源代码
     devServer : {//配置DevServer
         contentBase : './dist',//用来指定被访问html页面所在目录
         watchContentBase : false,
