@@ -5,14 +5,14 @@ import myF from './app.js'
 
 new Vue({
     el:'#main',
-    template:'<A></A>',
-    components:{A},
+    template:'<App></App>',
+    components:{App},
     methods:{
         f(){
             myF();
         }
     },
     created(){
-        //this.f();
+        this.f();
     }
 })

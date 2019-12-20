@@ -8,24 +8,30 @@
 </head>
 <body>
     <div id="main">
-       <!-- <div>
+        <div>
             <h1>{{message}}</h1>
             <input v-model="message">
-        </div>-->
+            <h1 v-if="isShow">hello world</h1>
+            <ul>
+                <li v-for="demo in list">{{demo}}</li>
+            </ul>
+        </div>
     </div>
 
 <script>
-    new Vue({
+   let app = new Vue({
         el:'#main',
         data:{
-            message:'测试'
+            message:'测试',
+            isShow:true,
+            list:['zhangsan','lisi','wanger']
         },
         template:``,
         computed:{
         },
         methods:{
         },
-        render (h) {
+       /* render (h) {
             let _this = this;
             return h('div',[h('h1',this.message),h('input',{
                 domProps:{
@@ -37,7 +43,7 @@
                     }
                 }
             })]);
-        },
+        },*/
         //生命周期钩子
         beforeCreate(){
 
