@@ -8,14 +8,16 @@
 </head>
 <body>
     <div id="main">
-        <div>
+        <!--<div>
             <h1>{{message}}</h1>
             <input v-model="message">
             <h1 v-if="isShow">hello world</h1>
+            &lt;!&ndash;&ndash;&gt;
             <ul>
                 <li v-for="demo in list">{{demo}}</li>
             </ul>
-        </div>
+            <button @click="addData">添加数据</button>
+        </div>-->
     </div>
 
 <script>
@@ -24,14 +26,19 @@
         data:{
             message:'测试',
             isShow:true,
-            list:['zhangsan','lisi','wanger']
+            list:['数据1','数据2'],
+            i:2
         },
         template:``,
         computed:{
         },
         methods:{
+            addData(){
+                this.i ++;
+                this.list.push("数据"+this.i);
+            }
         },
-       /* render (h) {
+        render (h) {
             let _this = this;
             return h('div',[h('h1',this.message),h('input',{
                 domProps:{
@@ -43,7 +50,7 @@
                     }
                 }
             })]);
-        },*/
+        },
         //生命周期钩子
         beforeCreate(){
 

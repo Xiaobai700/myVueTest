@@ -5,8 +5,8 @@ import myF from './app.js'
 
 new Vue({
     el:'#main',
-    template:'<App></App>',
-    components:{App},
+    template:'<A></A>',
+    components:{A},
     methods:{
         f(){
             myF();

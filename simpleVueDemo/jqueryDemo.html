@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryDemo</title>
+</head>
+<body>
+<div id="main">
+    <ul id="list">
+        <li>数据1</li>
+        <li>数据2</li>
+    </ul>
+    <button id="addData">添加数据</button>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var i = 2;
+        $("#addData").click(function () {
+            i++;
+            $("#list").children("li").last().append("<li>数据"+i+"</li>")
+        });
+    })
+</script>
+</body>
+</html>

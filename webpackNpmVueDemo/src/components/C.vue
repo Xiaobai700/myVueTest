@@ -11,6 +11,14 @@
             return{
                 message:'组件C'
             }
+        },
+        methods:{
+            sayWhat(){
+                this.$emit("myFunction");
+            }
+        },
+        created() {
+            this.sayWhat();
         }
     }
 </script>
