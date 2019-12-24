@@ -8,20 +8,19 @@
 </head>
 <body>
     <div id="main">
-        <!--<div>
+        <div>
             <h1>{{message}}</h1>
-            <input v-model="message">
+            <!--<input v-model="message">
             <h1 v-if="isShow">hello world</h1>
-            &lt;!&ndash;&ndash;&gt;
             <ul>
                 <li v-for="demo in list">{{demo}}</li>
             </ul>
-            <button @click="addData">添加数据</button>
-        </div>-->
+            <button @click="addData">添加数据</button>-->
+        </div>
     </div>
 
 <script>
-   let app = new Vue({
+   var vm = new Vue({
         el:'#main',
         data:{
             message:'测试',
@@ -39,7 +38,7 @@
             }
         },
         render (h) {
-            let _this = this;
+            /*let _this = this;
             return h('div',[h('h1',this.message),h('input',{
                 domProps:{
                     value:_this.message
@@ -49,7 +48,7 @@
                         _this.message = event.target.value;
                     }
                 }
-            })]);
+            })]);*/
         },
         //生命周期钩子
         beforeCreate(){

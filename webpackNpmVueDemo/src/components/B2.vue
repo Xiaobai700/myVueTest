@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <p>{{message}}</p>
-        <p>B1发送的消息：{{receiveData}}</p>
+    <div id="main-b2">
+        <p>{{title}}</p>
+        <button @click="myFunction">调用组件父组件A的方法</button>
+       <!-- <p>B1发送的消息：{{receiveData}}</p>-->
     </div>
 </template>
 
@@ -11,7 +12,7 @@
         name: "B2",
         data(){
             return{
-                message:'组件B2',
+                title:'组件B2',
                 receiveData:''
             }
         },
@@ -22,6 +23,12 @@
                 event.$on("B1-to-B2",(data) => {
                     this.receiveData = data;
                 });
+            },
+            myFunction(){
+                this.$emit("functionA");
+            },
+            functionB2(){
+                alert("这是组件B2中的方法！");
             }
         },
         mounted() {
@@ -31,5 +38,10 @@
 </script>
 
 <style scoped>
-
+    #main-b2{
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+        margin-left: 20px;
+    }
 </style>

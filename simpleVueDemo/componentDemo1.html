@@ -12,6 +12,7 @@
 </head>
 <body>
     <div id="main">
+        <h1>{{title}}</h1>
         <my-list></my-list>
     </div>
 <script>
@@ -237,6 +238,7 @@
     new Vue({
         el:'#main',
         data:{
+            title:'My Todo App'
         },
         components:{
             //局部注册时

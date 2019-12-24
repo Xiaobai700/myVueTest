@@ -1,15 +1,21 @@
 <template>
-    <div>
-        <p>{{message}}</p>
+    <div id="main-c">
+        <p>{{title}}</p>
+        <b>{{CData.message}}</b>
+        <br/>
+        <b>{{getDataFromA}}</b>
     </div>
 </template>
 
 <script>
+    import event from '../event.js'
     export default {
         name: "C",
+        props:['CData'],
         data(){
             return{
-                message:'组件C'
+                title:'组件C',
+                getDataFromA:''
             }
         },
         methods:{
@@ -18,11 +24,21 @@
             }
         },
         created() {
-            this.sayWhat();
+           // this.sayWhat();
+        },
+        mounted() {
+            event.$on('sendDataToC',(data)=>{
+                this.getDataFromA = data;
+            });
         }
     }
 </script>
 
 <style scoped>
-
+    #main-c{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        margin-left: 20px;
+    }
 </style>

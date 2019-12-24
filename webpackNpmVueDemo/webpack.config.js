@@ -14,7 +14,7 @@ module.exports = {
         //将所有依赖的模块合并输出到一个[name].bundle.js文件
         filename : '[name].bundle.js',//打包输出文件名称 name对应entry里面的index
         path : path.resolve(__dirname,'dist'),//打包输出路径
-        publicPath : ''//配置发布到线上资源的URL前缀
+        publicPath : '/'//此路径下的打包文件可以在浏览器中访问
     },
     module : {//配置处理模块的规则
         rules : [
@@ -50,7 +50,7 @@ module.exports = {
     ],
     devtool : 'inline-source-map',//追踪错误和警告,将编译后的代码映射回原始源代码
     devServer : {//配置DevServer
-        contentBase : './dist',//用来指定被访问html页面所在目录
+        contentBase : path.join(__dirname, "public"),//用来指定被访问html页面所在目录
         watchContentBase : false,
         compress : true,
         inline:true,//自动刷新网页

@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <p>{{message}}</p>
-        <p>{{B1Data.message}}</p>
-       <!-- <C @myFunction="sayHi"></C>-->
-        <button @click="sendMessage">发送消息</button>
+    <div id="main-b1">
+        <p>{{title}}</p>
+        <b>{{B1Data.message}}</b>
+        <C :CData="CData" @myFunction="sayHi"></C>
+        <!--<button @click="sendMessage">发送消息</button>-->
     </div>
 </template>
 
@@ -12,10 +12,10 @@
     import C from './C.vue'
     export default {
         name: "B1",
-        props:['B1Data'],
+        props:['B1Data','CData'],
         data(){
             return{
-                message:'组件B1'
+                title:'组件B1'
             }
         },
         components:{
@@ -33,5 +33,10 @@
 </script>
 
 <style scoped>
-
+    #main-b1{
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+        margin-left: 30px;
+    }
 </style>
