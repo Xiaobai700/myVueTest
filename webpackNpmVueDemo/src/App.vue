@@ -1,5 +1,12 @@
 <template>
-    <p>{{message}}</p>
+    <div>
+        <p>{{message}}</p>
+        <p>
+            <router-link to="/page1">页面1</router-link>
+            <router-link to="/page2">页面2</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>

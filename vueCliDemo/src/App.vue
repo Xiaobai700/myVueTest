@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <my-list></my-list>
     <router-view/>
   </div>
 </template>
 
 <script>
+import myList from './components/vueList'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    myList
+  }
 }
 </script>
 

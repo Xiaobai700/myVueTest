@@ -4,23 +4,32 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const webpack = require('webpack');
 
+function resolve (dir) {
+    return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
     mode : 'development',
     entry : {//配置模块的入口
-        index : './src/index.js',
-        app:'./src/app.js'
+        index : './src/index.js'
     },
     output : {//配置如何输出最终想要的代码
         //将所有依赖的模块合并输出到一个[name].bundle.js文件
         filename : '[name].bundle.js',//打包输出文件名称 name对应entry里面的index
         path : path.resolve(__dirname,'dist'),//打包输出路径
-        publicPath : '/'//此路径下的打包文件可以在浏览器中访问
+       // publicPath : '/'//此路径下的打包文件可以在浏览器中访问
     },
     module : {//配置处理模块的规则
         rules : [
             {
                 test : /\.css$/,
                 use : ['style-loader','css-loader']
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude:/node_modules/
+
             },
             {
                 test : /\.html$/,
@@ -34,7 +43,8 @@ module.exports = {
     },
     resolve : {//配置寻找模块的规则
         alias : {
-            vue : 'vue/dist/vue.js'
+            vue : 'vue/dist/vue.js',
+            '@': resolve('src')
         }
     },
     plugins : [//配置扩展插件

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueRouterDemo</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>
+            <router-link to="/foo">页面1</router-link>
+            <router-link to="/bar">页面2</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+
+<script>
+    //定义路线组件 也可以从其他文件引入
+    const Foo = { template: '<div>这是页面1</div>' }
+    const Bar = { template: '<div>这是页面2</div>' }
+    //定义一些路线 每个路由应该映射到一个组件
+    const routes = [
+        { path: '/foo', component: Foo },
+        { path: '/bar', component: Bar }
+    ]
+    //创建路由器实例
+    const router = new VueRouter({
+        routes // short for `routes: routes`
+    })
+    //创建并安装根实例
+    var app = new Vue({
+        el:'#app',
+        router
+    })
+</script>
+</body>
+</html>
