@@ -22,7 +22,7 @@ const router = new Router({
 new Vue({
     el:'#main',
     router,
-    template:'<App></App>',
+    template:'<A></A>',
     components:{A,App},
     methods:{
         f(){
@@ -30,6 +30,6 @@ new Vue({
         }
     },
     created(){
-        this.f();
+        //this.f();
     }
 })

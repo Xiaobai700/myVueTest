@@ -3,7 +3,8 @@
         <p>{{title}}</p>
         <b>{{B1Data.message}}</b>
         <C :CData="CData" @myFunction="sayHi"></C>
-        <!--<button @click="sendMessage">发送消息</button>-->
+        <button @click="sendMessage">发送消息给B2</button>
+        <!--<button @click="sendMessage1">调用B2的方法</button>-->
     </div>
 </template>
 
@@ -27,6 +28,9 @@
             },
             sayHi(){
                 alert("hi");
+            },
+            sendMessage1(){
+                this.$emit("functiondemo");
             }
         }
     }

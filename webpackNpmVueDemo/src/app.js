@@ -1,4 +1,5 @@
 export default function myF() {
-    //alert("hi");
+    alert("hi");
     //consoles.log("hello");
 }
+

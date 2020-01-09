@@ -1,9 +1,9 @@
 <template>
     <div id="main-c">
         <p>{{title}}</p>
-        <b>{{CData.message}}</b>
+        <!--<b>{{CData.message}}</b>-->
         <br/>
-        <b>{{getDataFromA}}</b>
+        <!--<b>{{getDataFromA}}</b>-->
     </div>
 </template>
 

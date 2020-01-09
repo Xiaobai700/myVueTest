@@ -1,10 +1,11 @@
 <template>
     <div id="main-a">
         <p>{{title}}</p>
-        <B1 :B1Data="B1Data" :CData="CData"></B1>
+        <B1 @functiondemo="myFunction" :B1Data="B1Data" :CData="CData"></B1>
         <B2 ref="componentB2" @functionA="functionA"></B2>
         <button class="btn" @click="myFunction">调用B2中的方法</button>
-        <button class="btn" @click="sendDataToC">传递数据给组件C</button>
+         <button class="btn" @click="sendDataToC">传递数据给组件C</button>
+        <!--<vue-list></vue-list>-->
     </div>
 </template>
 

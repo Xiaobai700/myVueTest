@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <my-list></my-list>
+    <p>
+      <router-link to="/webSocketDemo">001</router-link>
+      <router-link to="/helloWorld">002</router-link>
+    </p>
     <router-view/>
   </div>
 </template>

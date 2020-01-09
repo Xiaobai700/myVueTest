@@ -1,8 +1,8 @@
 <template>
     <div id="main-b2">
         <p>{{title}}</p>
-        <button @click="myFunction">调用组件父组件A的方法</button>
-       <!-- <p>B1发送的消息：{{receiveData}}</p>-->
+        <!--<button @click="myFunction">调用父组件A的方法</button>-->
+        <p>B1发送的消息：{{receiveData}}</p>
     </div>
 </template>
 
